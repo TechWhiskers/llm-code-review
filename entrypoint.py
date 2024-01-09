@@ -157,6 +157,9 @@ def main(
     # Check if necessary environment variables are set or not
     check_required_env_vars()
 
+    with open('diff.txt', 'r') as f:
+        diff=f.read()
+    logger.info(diff)
     # Request a code review
     chunked_reviews, summarized_review = get_review(
         diff=diff,
